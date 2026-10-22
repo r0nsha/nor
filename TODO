@@ -1,0 +1,48 @@
+- [ ] Basic TUI
+- [ ] Buffer rendering: Gap buffer ([gap buffers vs ropes](https://coredumped.dev/2023/08/09/text-showdown-gap-buffers-vs-ropes/))
+- [ ] UTF-8 support
+- [ ] Basic buffer navigation
+- [ ] Basic buffer editing
+- [ ] Immediate-mode rendering: double-buffered grid of cells (frame buffers), only surgically update changed cells. See [synchronized output](https://ghostty.org/docs/help/synchronized-output)
+- [ ] Modal editing and selections as primitives
+    > Do what Kakoune does to disambiguate escape without a timeout
+- [ ] Undo tree
+- [ ] Keymaps
+    - Defined as `"space x"`, `"c-x c-s"`, `"g f"`, etc.
+    - Use a Trie (prefix tree)
+- [ ] Use Janet for scripting
+- [ ] Define motions in Janet
+- [ ] Changes to a buffer wrapped in a "transaction". Allows bundling changesets for undo/redo, maybe repeat
+- [ ] Integration tests
+- [ ] Kitty keyboard protocol with progressive enhancement
+    - Report alternate keys so keymaps match physical keys. Is it possible? Should be configurable?
+- [ ] selections as primitives (anchor + cursor), multiple selections, selection -> action — like kakoune
+- [ ] no select mode initially, like kakoune; add it later if needed
+- [ ] Create a Discord/Zulip
+- [ ] Registers
+- [ ] Major/minor modes like in Emacs?
+- [ ] Profiling with `core:prof/spall`, Tracy, etc.
+- [ ] Builtin mode line. Rendering done in Janet, so components can be reused and reordered for customization
+- [ ] `minibuffer`
+    - [ ] Command interface (built on minibuffer)
+    - [ ] Commands are defined in kebab-case
+    - [ ] Builtin module for creating commands
+    - [ ] Command completion
+    - [ ] `:help` command (script-defined)
+- [ ] Text properties
+    - Properties are prioritized, see impls from other text editors
+- [ ] `gf` motion respects optional line range (script-defined)
+- [ ] tree-sitter
+    - [ ] Highlighting
+    - [ ] Language injections
+    - [ ] Text objects
+    - [ ] Indentation
+    - [ ] Folding
+- [ ] Builtin picker module (built on minibuffer)
+- [ ] LSP
+- [ ] Kitty text sizing protocol: constrain text sizing to integers > 1 and text height to multiples of the default grid size, so it works nicely with the grid and everything else in the UI
+- [ ] Kitty graphics protocol with selection, yank, paste, etc.
+- [ ] File watcher (`autoread`)
+- [ ] Server/client architecture
+- [ ] Terminal buffer implementation with `libghostty`. Should handle nested editor instances.
+- [ ] CRDTs?
